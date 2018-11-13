@@ -2,9 +2,18 @@ public class ArrayMethods{
    /*
    *PART 1
    */
-   public static int rowSum(int[][] ary, int x){}
-    //returns the sum of the elements in Row x of ary.
-    //When x is past the last row count it as a zero. (NO indexOutOfBounds should ever occur)
+   public static int rowSum(int[][] ary, int x){
+     //returns the sum of the elements in Row x of ary.
+     //When x is past the last row count it as a zero. (NO indexOutOfBounds should ever occur)
+     int sum = 0;
+     if (ary.length <= x || x < 0){
+       return 0;
+     }
+     for (int i = 0; i < ary[x].length; i++){
+       sum += ary[x][i];
+     }
+     return sum;
+   }
 
    public static int columnSum(int[][] ary, int x){}
     //returns the sum of the elements in Column x of ary (careful with rows of different lengths!).
