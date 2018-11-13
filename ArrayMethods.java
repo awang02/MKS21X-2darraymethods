@@ -15,10 +15,18 @@ public class ArrayMethods{
      return sum;
    }
 
-   public static int columnSum(int[][] ary, int x){}
-    //returns the sum of the elements in Column x of ary (careful with rows of different lengths!).
-    //When a row is not long enough to reach the column count it as a zero. (NO indexOutOfBounds should ever occur)
-
+   public static int columnSum(int[][] ary, int x){
+     //returns the sum of the elements in Column x of ary (careful with rows of different lengths!).
+     //When a row is not long enough to reach the column count it as a zero. (NO indexOutOfBounds should ever occur)
+     int sum = 0;
+     for (int i = 0; i < ary.length ; i++){
+       if (x < ary[i].length){
+         sum += ary[i][x];
+       }
+     }
+     return sum;
+   }
+   
    /*
    *PART 2 - use prior methods where appropriate
    */
