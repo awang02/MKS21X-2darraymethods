@@ -26,13 +26,19 @@ public class ArrayMethods{
      }
      return sum;
    }
-   
+
    /*
    *PART 2 - use prior methods where appropriate
    */
-   public static int[] allRowSums(int[][] ary){}
-    //returns an array of the row sums for each row of ary.
-    //Index i of the return array contains the sum of elements in row i.
+   public static int[] allRowSums(int[][] ary){
+     //returns an array of the row sums for each row of ary.
+     //Index i of the return array contains the sum of elements in row i.
+     int[] finAry = new int[ary.length];
+     for (int i = 0; i < ary.length; i++){
+       finAry[i] = rowSum(ary, i);
+     }
+     return finAry;
+   }
 
     public static int[] allColSums(int[][] ary){}
     //Returns an array with the column sum of each column of ary.
