@@ -40,12 +40,27 @@ public class ArrayMethods{
      return finAry;
    }
 
-    public static int[] allColSums(int[][] ary){}
+    public static int[] allColSums(int[][] ary){
     //Returns an array with the column sum of each column of ary.
     //When a row is not long enough to reach the column count it as a zero. (NO indexOutOfBounds should ever occur)
     //Index i of the return array contains the sum of elements in column i, ignoring any rows that are too short.
     //The length of the returned array should be the length of the LONGEST array in ary.
+      int[] finAry = new int[getMaxRow(ary)];
+      for (int i = 0; i < getMaxRow(ary); i++){
+        finAry[i] = columnSum(ary, i);
+      }
+      return finAry;
+    }
 
+    public static int getMaxRow(int[][]ary){
+      int max = 0;
+      for (int i = 0; i < ary.length; i++){
+        if (ary[i].length > max){
+          max = ary[i].length;
+        }
+      }
+      return max;
+    }
 
    /*
    *PART 3 - use prior methods where appropriate
